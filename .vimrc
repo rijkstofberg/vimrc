@@ -25,7 +25,7 @@ filetype plugin on
 " Settings for solarized colorscheme. See:
 " https://github.com/altercation/vim-colors-solarized
 syntax enable
-set background=dark
+set background=light
 if has('gui_running')
     colorscheme solarized
 endif
