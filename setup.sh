@@ -53,10 +53,22 @@ getgit https://github.com/tpope/vim-repeat.git vim-repeat
 getgit https://github.com/tsaleh/vim-matchit.git vim-matchit
 
 # On-the-fly python syntax checking
-getgit https://github.com/kevinw/pyflakes-vim.git pyflakes-vim
+#getgit https://github.com/kevinw/pyflakes-vim.git pyflakes-vim
 
 # Text filtering and alignment
 getgit https://github.com/godlygeek/tabular.git tabular
 
 # Text filtering and alignment
 getgit https://github.com/rodjek/vim-puppet.git vim-puppet
+
+# Mako syntax highlighting, used with pyramid
+getgit https://github.com/vim-scripts/mako.vim.git mako.vim
+
+# NERDTree tree browser
+getgit https://github.com/scrooloose/nerdtree.git nerdtree
+
+# Syntastic syntax checker
+getgit https://github.com/scrooloose/syntastic.git syntastic
+
+# Shows errors in the status line. Makes the Syntastic workflow smoother.
+getgit https://github.com/dannyob/quickfixstatus.git quickfixstatus
