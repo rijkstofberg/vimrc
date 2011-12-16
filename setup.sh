@@ -72,3 +72,15 @@ getgit https://github.com/scrooloose/syntastic.git syntastic
 
 # Shows errors in the status line. Makes the Syntastic workflow smoother.
 getgit https://github.com/dannyob/quickfixstatus.git quickfixstatus
+
+# Structured text
+getgit https://github.com/vim-scripts/VST.git VST
+
+# Git wrappers for vim
+getgit git://github.com/tpope/vim-fugitive.git vim-fugitive
+
+# tag bar
+getgit https://github.com/majutsushi/tagbar.git
+
+#tag list
+getgit https://github.com/vim-scripts/taglist.vim.git
