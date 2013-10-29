@@ -99,3 +99,6 @@ set statusline+=%*
 
 " Syntastic disable the signs down the left-hand side
 let g:syntastic_enable_signs=0
+
+" put a different color background on the 80th column
+set colorcolumn=80
