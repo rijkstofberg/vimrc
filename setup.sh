@@ -25,6 +25,11 @@ if [ ! -e $HOME/.vim-tmp ]; then
     mkdir $HOME/.vim-tmp
 fi
 
+# Create a bundle directory for all the git packages
+if [ ! -e bundle ]; then
+    mkdir bundle
+fi
+
 # Solarized gives great syntax and editing colors
 getgit git://github.com/altercation/vim-colors-solarized.git vim-colors-solarized
 
@@ -50,16 +55,10 @@ getgit https://github.com/tpope/vim-ragtag.git vim-ragtag
 getgit https://github.com/tpope/vim-repeat.git vim-repeat
 
 # Matchit jumps between tags in html etc. Might be part of a standard install
-getgit https://github.com/tsaleh/vim-matchit.git vim-matchit
+getgit https://github.com/edsono/vim-matchit.git vim-matchit
 
 # On-the-fly python syntax checking
 #getgit https://github.com/kevinw/pyflakes-vim.git pyflakes-vim
-
-# Text filtering and alignment
-getgit https://github.com/godlygeek/tabular.git tabular
-
-# Text filtering and alignment
-getgit https://github.com/rodjek/vim-puppet.git vim-puppet
 
 # Mako syntax highlighting, used with pyramid
 getgit https://github.com/vim-scripts/mako.vim.git mako.vim

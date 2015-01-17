@@ -1,10 +1,11 @@
-" Start off with Pathongen to manage plugins. See:
+" Start off with Pathogen to manage plugins. See:
 " https://github.com/tpope/vim-pathogen
 call pathogen#infect()
 
 " Settings that I use every day.
 behave xterm
-set autoindent
+" Automatically use indenting according to filetype
+:filetype indent on
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backspace=2
@@ -24,6 +25,7 @@ filetype plugin on
 " Settings for solarized colorscheme. See:
 " https://github.com/altercation/vim-colors-solarized
 syntax enable
+
 set background=light
 if has('gui_running')
     colorscheme solarized
@@ -32,8 +34,10 @@ endif
 "syntax on
 
 " Next and previous buffers
-map <C-S-Tab> :bp<C-M>
-map <C-Tab> :bn<C-M>
+" These are commented out, since I use Terminator, which maps these to
+" next/previous windows in the terminal.
+"map <C-S-Tab> :bp<C-M>
+"map <C-Tab> :bn<C-M>
 
 " This is commented out because it messes with snipMate tab completion. Still
 " need to see if it works better this way.
@@ -68,7 +72,10 @@ nmap ;r a/<esc>f dt>
 nmap ;rcm %s/<C-M>$//g
 
 " Insert current date
-map ;id O<C-R>=strftime("%c")<cr><Esc>
+map ;d O<C-R>=strftime("%Y-%m-%d")<cr><Esc>
+
+" Tidy up html
+map ;ht :!tidy -q -i --show-errors 0<CR>
 
 " xml and html files tabstops should be 4 spaces
 autocmd BufNewFile,BufRead *.py set tabstop=4 shiftwidth=4
@@ -86,6 +93,8 @@ au BufNewFile,BufRead *.zcml set filetype=xml.zcml
 au FileType python set ft=python.django " For SnipMate
 au FileType html set ft=htmldjango.html " For SnipMate
 
+" CSS tidy integration
+au filetype css setlocal equalprg=csstidy\ -\ --template=$HOME/.vim/curly.tpl\ --preserve_css=true\ --silent=true 
 
 " Stuff for flex development
 au BufNewFile,BufRead *.mxml set filetype=xml
@@ -102,3 +111,6 @@ let g:syntastic_enable_signs=0
 
 " put a different color background on the 80th column
 set colorcolumn=80
+
+" syntastic js checker jshint
+let g:syntastic_javascript_checkers = ['jshint']
