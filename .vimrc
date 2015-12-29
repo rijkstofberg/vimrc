@@ -115,3 +115,25 @@ set colorcolumn=80
 
 " syntastic js checker jshint
 let g:syntastic_javascript_checkers = ['jshint']
+
+" Don't let syntastic check my rst files!
+let g:syntastic_mode_map = { 'passive_filetypes': ['java', 'rst'] }
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" No annoying sound on errors
+set errorbells
+set visualbell
+set t_vb=
+set tm=500
